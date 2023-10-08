@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Language Toggle </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            outline: none;
+        }
+        .body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f2f2f2;
+            overflow: hidden;
+        }
+        .container{
+            position: relative;
+            max-width: 600px;
+            height: 500px;
+            padding: 50px;
+            color:#555;
+        } 
+        .container .content{
+          display: none;
+          margin-top:20px;
+        }
+        .container .content.contentEnglish{
+            display: block;
+        }
+        .check{
+            position: relative;
+            width:50px;
+        }
+        .check::before{
+            content:"";
+            position: absolute;
+            width: 50px;
+            height:25px;
+            background: #333;
+            border-radius: 25px;
+        }
+        .check::after{
+            content:"";
+            position: absolute;
+            left: 0px;
+            width: 25px;
+            height:25px;
+            background: #fff;
+            border-radius: 25px;
+            border: 2px solid #333;
+            transition:0.25s ;
+            box-sizing: border-box;
+        }
+        .check:checked::after{
+            left: 25px;
+            border: 2px solid #00a1ff;
+        }
+        .check:checked::before{
+            background: #00a1ff;
+        }
+        .check:checked ~ .content.contentEnglish{
+            display: none;
+        }
+        .check:checked ~ .content.contentHindi{
+            display: block;
+        }
+        .en{
+            color:#333;
+        }
+        .hn{
+            color: #00a1ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <span class="en">English</span>
+    <input type="checkbox" class="check">
+    <span class="hn">क्योंकि</span>
+    <div class="content contentEnglish">
+    <h2>English</h2>
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like</p>
+    </div>
+    <div class="content contentHindi">
+        <h2>क्योंकि</h2>
+        <p>हिंदी बोर्ड परीक्षा में एक प्रभावी निबंध लिखने पर 20-30 का खर्च पर्याप्त है। क्योंकि परीक्षा हॉल में हर मिनट बहुत अपने हिंदी निबंध लेखन कौशल में सुधार करने के सर्वोत्तम तरीकों में से एक किताबों और समाचार पत्रों को पढ़ना और हिंदी में कुछ जानकारीपूर्ण श्रृंखलाओं को देखना है। ये चीजें आपकी हिंदी शब्दावली में वृद्धि करेंगी और आपको हिंदी में एक प्रेरक निबंध लिखने में मदद करेंगी।</p>
+        </div>
+    </div>
+</body>
+</html>
